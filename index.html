@@ -76,18 +76,18 @@
 
   /* ===================== HERO ===================== */
   .hero {
-    min-height: 100vh;
+    min-height: 90vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    padding: 60px 40px;
+    padding: 120px 40px 80px;
     position: relative;
     max-width: 1440px;
     margin: 0 auto;
-    align-items: end;
+    align-items: center;
   }
   .hero-left {
-    padding-bottom: 80px;
+    padding-bottom: 0;
   }
   .hero-badge {
     display: inline-block;
@@ -119,7 +119,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding-bottom: 80px;
+    padding-bottom: 0;
   }
   .hero-metric {
     padding: 24px 28px;
@@ -128,6 +128,11 @@
     display: flex;
     align-items: baseline;
     gap: 16px;
+    background: rgba(255,255,255,0.4);
+    transition: border-color 0.3s;
+  }
+  .hero-metric:hover {
+    border-color: var(--coral);
   }
   .hero-metric .hm-num {
     font-family: 'Instrument Serif', serif;
@@ -145,7 +150,7 @@
   .why-now {
     background: var(--bg-dark);
     color: var(--text-light);
-    padding: 200px 40px;
+    padding: 120px 40px;
   }
   .why-now .section-num { color: var(--green); }
   .why-now h2 {
@@ -218,7 +223,7 @@
 
   /* ===================== SECTION: ICP ===================== */
   .icp-section {
-    padding: 200px 40px;
+    padding: 120px 40px;
     max-width: 1240px;
     margin: 0 auto;
   }
@@ -364,7 +369,7 @@
   .strategy-section {
     background: var(--coral);
     color: #fff;
-    padding: 200px 40px;
+    padding: 120px 40px;
   }
   .strategy-section .section-num { color: rgba(255,255,255,0.5); }
   .strategy-section h2 {
@@ -466,7 +471,7 @@
 
   /* ===================== SECTION: TOOLS ===================== */
   .tools-section {
-    padding: 200px 40px;
+    padding: 120px 40px;
     max-width: 1240px;
     margin: 0 auto;
   }
@@ -569,7 +574,7 @@
   .pricing-section {
     background: var(--bg-dark);
     color: var(--text-light);
-    padding: 200px 40px;
+    padding: 120px 40px;
   }
   .pricing-section .section-num { color: var(--peach); }
   .pricing-section h2 {
@@ -720,7 +725,7 @@
 
   /* ===================== SECTION: ECONOMICS ===================== */
   .economics-section {
-    padding: 200px 40px;
+    padding: 120px 40px;
     max-width: 1240px;
     margin: 0 auto;
   }
@@ -796,7 +801,7 @@
   .transparency-section {
     background: var(--amber);
     color: var(--bg-dark);
-    padding: 200px 40px;
+    padding: 120px 40px;
   }
   .transparency-section .section-num { color: rgba(0,0,0,0.35); }
   .transparency-section h2 {
@@ -848,7 +853,7 @@
 
   /* ===================== SECTION: ROADMAP ===================== */
   .roadmap-section {
-    padding: 200px 40px;
+    padding: 120px 40px;
     max-width: 1240px;
     margin: 0 auto;
   }
@@ -912,7 +917,7 @@
   .cta-section {
     background: var(--bg-dark);
     color: var(--text-light);
-    padding: 200px 40px;
+    padding: 120px 40px;
   }
   .cta-section .section-num { color: var(--green); }
   .cta-section h2 {
@@ -1040,10 +1045,10 @@
 
   @media (max-width: 768px) {
     .hero { padding: 40px 20px; min-height: auto; padding-top: 80px; }
-    .hero-left { padding-bottom: 40px; }
-    .hero-right { padding-bottom: 40px; }
-    .why-now, .strategy-section, .pricing-section, .transparency-section, .cta-section { padding: 120px 20px; }
-    .icp-section, .tools-section, .economics-section, .roadmap-section { padding: 120px 20px; }
+    .hero-left { padding-bottom: 0; }
+    .hero-right { padding-bottom: 0; }
+    .why-now, .strategy-section, .pricing-section, .transparency-section, .cta-section { padding: 80px 20px; }
+    .icp-section, .tools-section, .economics-section, .roadmap-section { padding: 80px 20px; }
     .persona-block { grid-template-columns: 1fr; gap: 32px; }
     .persona-sidebar .persona-big-num { display: none; }
     .bar-row { grid-template-columns: 120px 1fr; }
