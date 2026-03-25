@@ -1026,14 +1026,220 @@
   }
   .footer a:hover { text-decoration: underline; }
 
+  /* ===================== IMAGE ELEMENTS ===================== */
+  .hero-image-block {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    margin-bottom: 24px;
+  }
+  .hero-image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-image-block::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(10,10,10,0.3) 100%);
+    pointer-events: none;
+  }
+
+  /* STRATEGY IMAGE INSET */
+  .strategy-image-inset {
+    max-width: 1240px;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .strategy-image-inset img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+  }
+  .strategy-image-caption {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+  }
+  .strategy-image-caption strong {
+    color: #fff;
+    display: block;
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+    line-height: 1.15;
+  }
+
+  /* TOOLS IMAGE BANNER */
+  .tools-image-banner {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 0;
+  }
+  .tools-image-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.8);
+  }
+  .tools-image-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, var(--bg) 0%, transparent 30%, transparent 70%, var(--bg) 100%);
+    pointer-events: none;
+  }
+
+  /* CTA BACKGROUND IMAGE */
+  .cta-section-enhanced {
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-bg-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .cta-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.07;
+    filter: grayscale(0.5) brightness(0.6);
+  }
+
+  /* SECTION WATERMARK NUMBERS */
+  .section-watermark {
+    position: relative;
+  }
+  .section-watermark::before {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(12rem, 20vw, 22rem);
+    line-height: 0.75;
+    letter-spacing: -0.06em;
+    opacity: 0.025;
+    position: absolute;
+    top: 60px;
+    right: 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .section-watermark > *:not(.cta-bg-image) { position: relative; z-index: 1; }
+
+  .wm-01::before { content: '01'; }
+  .wm-02::before { content: '02'; }
+  .wm-03::before { content: '03'; color: rgba(255,255,255,0.04); }
+  .wm-04::before { content: '04'; }
+  .wm-05::before { content: '05'; color: rgba(255,255,255,0.03); }
+  .wm-06::before { content: '06'; }
+  .wm-07::before { content: '07'; color: rgba(0,0,0,0.04); }
+  .wm-08::before { content: '08'; }
+  .wm-09::before { content: '09'; color: rgba(255,255,255,0.03); }
+
+  /* GEOMETRIC ACCENT LINES */
+  .accent-line {
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--green);
+    margin-bottom: 24px;
+    border-radius: 2px;
+  }
+  .accent-line-coral { background: var(--coral); }
+  .accent-line-amber { background: var(--amber); }
+  .accent-line-peach { background: var(--peach); }
+
+  /* EDITORIAL DIVIDER */
+  .editorial-divider {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 1px;
+  }
+  .editorial-divider::before,
+  .editorial-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .editorial-divider span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+
+  /* SMOOTH SECTION TRANSITIONS */
+  .section-fade-in {
+    animation: fadeSlideIn 0.6s ease-out both;
+  }
+
+  /* HERO METRICS OVER IMAGE */
+  .hero-metrics-overlay {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* SEQUENCE TABLE EDITORIAL TREATMENT */
+  .seq-table tbody tr {
+    transition: all 0.2s ease;
+  }
+  .seq-table tbody tr td:first-child {
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .seq-table tbody tr:hover td:first-child {
+    border-left-color: #fff;
+  }
+
+  /* FULL BLEED IMAGE SECTION */
+  .full-bleed-image {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+  }
+  .full-bleed-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
   /* ===================== RESPONSIVE ===================== */
   @media (max-width: 1024px) {
     .hero { grid-template-columns: 1fr; }
-    .hero-right { flex-direction: row; flex-wrap: wrap; }
+    .hero-right { flex-direction: column; }
+    .hero-image-block { aspect-ratio: 16/9; }
+    .hero-metrics-overlay { grid-template-columns: 1fr 1fr; }
     .hero-metric { flex: 1; min-width: 200px; }
     .why-cards { grid-template-columns: 1fr; }
     .subway { grid-template-columns: 1fr; gap: 20px; }
     .subway::before { display: none; }
+    .strategy-image-inset { grid-template-columns: 1fr; }
+    .strategy-image-inset img { height: 240px; }
     .pricing-grid { grid-template-columns: 1fr; }
     .risk-grid { grid-template-columns: 1fr; }
     .scenario-grid { grid-template-columns: 1fr; }
@@ -1041,12 +1247,14 @@
     .cta-cards { grid-template-columns: 1fr; }
     .cta-contact { flex-direction: column; text-align: center; }
     .cta-contact-links { flex-direction: column; }
+    .section-watermark::before { font-size: clamp(8rem, 15vw, 14rem); right: 20px; }
   }
 
   @media (max-width: 768px) {
     .hero { padding: 40px 20px; min-height: auto; padding-top: 80px; }
     .hero-left { padding-bottom: 0; }
     .hero-right { padding-bottom: 0; }
+    .hero-metrics-overlay { grid-template-columns: 1fr; }
     .why-now, .strategy-section, .pricing-section, .transparency-section, .cta-section { padding: 80px 20px; }
     .icp-section, .tools-section, .economics-section, .roadmap-section { padding: 80px 20px; }
     .persona-block { grid-template-columns: 1fr; gap: 32px; }
@@ -1057,7 +1265,11 @@
     .callout { padding: 32px 24px; }
     .seq-table { font-size: 0.78rem; }
     .seq-table td, .seq-table th { padding: 10px 8px; }
+    .tools-image-banner { height: 140px; }
+    .full-bleed-image { height: 200px; }
+    .section-watermark::before { display: none; }
     .footer { flex-direction: column; gap: 12px; text-align: center; }
+    .editorial-divider { padding: 0 20px; }
   }
 
   @media (max-width: 480px) {
@@ -1077,29 +1289,35 @@
     <p class="hero-sub">Я изучил твой продукт, рынок, конкурентов и лучшие инструменты аутрича. Вот что предлагаю и как это будет работать.</p>
   </div>
   <div class="hero-right">
-    <div class="hero-metric">
-      <div class="hm-num" style="color: var(--green);">500+</div>
-      <div class="hm-label">целевых лидов в месяц</div>
+    <div class="hero-image-block">
+      <img src="img/hero.jpg" alt="Geometric rings in coral, green, and amber" width="600" height="450">
     </div>
-    <div class="hero-metric">
-      <div class="hm-num" style="color: var(--coral);">2</div>
-      <div class="hm-label">канала: Email + LinkedIn</div>
-    </div>
-    <div class="hero-metric">
-      <div class="hm-num" style="color: var(--amber);">5-6</div>
-      <div class="hm-label">недель до первых demo</div>
-    </div>
-    <div class="hero-metric">
-      <div class="hm-num" style="color: var(--peach);">AI</div>
-      <div class="hm-label">персонализация каждого касания</div>
+    <div class="hero-metrics-overlay">
+      <div class="hero-metric">
+        <div class="hm-num" style="color: var(--green);">500+</div>
+        <div class="hm-label">целевых лидов в месяц</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hm-num" style="color: var(--coral);">2</div>
+        <div class="hm-label">канала: Email + LinkedIn</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hm-num" style="color: var(--amber);">5-6</div>
+        <div class="hm-label">недель до первых demo</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hm-num" style="color: var(--peach);">AI</div>
+        <div class="hm-label">персонализация каждого касания</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ===================== WHY NOW ===================== -->
-<section class="why-now" id="about">
+<section class="why-now section-watermark wm-01" id="about">
   <div class="max-w">
     <span class="section-num">01 / Почему сейчас</span>
+    <span class="accent-line"></span>
     <h2>Puriphy -- сильный продукт. Осталось донести его до нужных людей</h2>
   </div>
 
@@ -1131,8 +1349,9 @@
 </section>
 
 <!-- ===================== ICP ===================== -->
-<section class="icp-section" id="icp">
+<section class="icp-section section-watermark wm-02" id="icp">
   <span class="section-num">02 / Кого будем искать</span>
+  <span class="accent-line accent-line-coral"></span>
   <h2>Идеальные клиенты Puriphy</h2>
   <p class="icp-intro">На основе твоего описания -- <strong>бренды и ритейл</strong> -- я детализировал два профиля, на которых мы будем фокусировать аутрич:</p>
 
@@ -1213,10 +1432,15 @@
   </div>
 </section>
 
+<div class="editorial-divider" style="padding-top: 40px; padding-bottom: 40px;">
+  <span>Strategy</span>
+</div>
+
 <!-- ===================== STRATEGY ===================== -->
-<section class="strategy-section" id="strategy">
+<section class="strategy-section section-watermark wm-03" id="strategy">
   <div class="max-w">
     <span class="section-num">03 / Как я это сделаю</span>
+    <span class="accent-line" style="background: rgba(255,255,255,0.4);"></span>
     <h2>Машина, которая приводит клиентов на автопилоте</h2>
   </div>
 
@@ -1250,6 +1474,14 @@
       <div class="subway-dot"></div>
       <h4>Meetings</h4>
       <p>Calendly / Demo booking</p>
+    </div>
+  </div>
+
+  <div class="strategy-image-inset max-w">
+    <img src="img/strategy.jpg" alt="Chrome arrows network on concrete" loading="lazy">
+    <div class="strategy-image-caption">
+      <strong>Каждый элемент цепочки усиливает предыдущий</strong>
+      LinkedIn разогревает контакт, email доставляет ценность, follow-up создаёт urgency. AI-персонализация на каждом этапе увеличивает reply rate в 2-3 раза по сравнению с шаблонным подходом.
     </div>
   </div>
 
@@ -1312,9 +1544,15 @@
   </div>
 </section>
 
+<!-- ===================== TOOLS IMAGE DIVIDER ===================== -->
+<div class="tools-image-banner">
+  <img src="img/tools.jpg" alt="Emerald metallic grid texture" loading="lazy">
+</div>
+
 <!-- ===================== TOOLS ===================== -->
-<section class="tools-section" id="tools">
+<section class="tools-section section-watermark wm-04" id="tools">
   <span class="section-num">04 / Технологии</span>
+  <span class="accent-line accent-line-amber"></span>
   <h2>Какие инструменты я использую</h2>
   <p class="tools-intro">Я работаю с лучшими инструментами на рынке + open-source решениями, которые снижают расходы на инфраструктуру. Тебе не нужно в них разбираться -- я всё настрою.</p>
 
@@ -1443,9 +1681,10 @@
 </section>
 
 <!-- ===================== PRICING ===================== -->
-<section class="pricing-section" id="pricing">
+<section class="pricing-section section-watermark wm-05" id="pricing">
   <div class="max-w">
     <span class="section-num">05 / Варианты сотрудничества</span>
+    <span class="accent-line accent-line-peach"></span>
     <h2>Оля, выбери формат, который подходит</h2>
     <p class="pricing-context">Для контекста: агентства аутрича берут <strong style="color: var(--text-light);">EUR 2,500-5,000/мес</strong> плюс setup fee EUR 1,000-5,000. Я предлагаю агентское качество значительно дешевле, потому что использую AI-инструменты, автоматизирующие 70% рутинной работы.</p>
   </div>
@@ -1526,8 +1765,9 @@
 </section>
 
 <!-- ===================== ECONOMICS ===================== -->
-<section class="economics-section" id="economics">
+<section class="economics-section section-watermark wm-06" id="economics">
   <span class="section-num">06 / Окупаемость</span>
+  <span class="accent-line"></span>
   <h2>Оля, вот что ты получишь в цифрах</h2>
 
   <div class="metrics-strip">
@@ -1576,10 +1816,15 @@
   </div>
 </section>
 
+<div class="editorial-divider" style="padding-top: 40px; padding-bottom: 40px;">
+  <span>Transparency</span>
+</div>
+
 <!-- ===================== TRANSPARENCY ===================== -->
-<section class="transparency-section" id="risks">
+<section class="transparency-section section-watermark wm-07" id="risks">
   <div class="max-w">
     <span class="section-num">07 / Честно о нюансах</span>
+    <span class="accent-line accent-line-amber" style="background: rgba(0,0,0,0.2);"></span>
     <h2>Что важно знать заранее</h2>
     <p class="transparency-intro">Оля, я за полную прозрачность. Вот что стоит учесть при запуске аутрича:</p>
   </div>
@@ -1619,8 +1864,9 @@
 </section>
 
 <!-- ===================== ROADMAP ===================== -->
-<section class="roadmap-section" id="roadmap">
+<section class="roadmap-section section-watermark wm-08" id="roadmap">
   <span class="section-num">08 / Как это будет происходить</span>
+  <span class="accent-line accent-line-coral"></span>
   <h2>Понедельный план запуска</h2>
 
   <div class="timeline">
@@ -1662,9 +1908,13 @@
 </section>
 
 <!-- ===================== CTA ===================== -->
-<section class="cta-section" id="cta">
+<section class="cta-section cta-section-enhanced section-watermark wm-09" id="cta">
+  <div class="cta-bg-image">
+    <img src="img/cta.jpg" alt="Street art mural with arrows on concrete wall" loading="lazy">
+  </div>
   <div class="max-w">
     <span class="section-num">09 / Следующий шаг</span>
+    <span class="accent-line"></span>
     <h2>Оля, давай начнём</h2>
   </div>
 
